@@ -14,3 +14,4 @@ complete<- function(directory, id=1:332){
 }
 
 complete("specdata",c(2, 4, 8, 10, 12)) #to check if it works
+complete("specdata")
