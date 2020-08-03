@@ -4,12 +4,11 @@ pollutantmean<- function(directory, pollutant,id=1:332){
   fulldata<-data.frame() #it creates a data frame where to saev the results asked
   for(i in id){ #this loop for working on all the monitors selectd in the "id" call of the function
     single<-read.csv(files[i]) #a sigle file
-    singleFul<-na.omit(single) #same file as above without missing values
-    fulldata<-rbind(fulldata,singleFul)
+    fulldata<-rbind(fulldata,single)
      }
-  means<-mean(fulldata[,pollutant]) #it gives proper names to the dataframe
+  means<-mean(fulldata[,pollutant],na.rm = TRUE) #it gives proper names to the dataframe
   means
-}
+  }
 
-means<-pollutantmean("specdata","sulfate", 1:10) #to check if it works
+means<-pollutantmean("specdata", "nitrate", 70:72) #to check if it works
 means
