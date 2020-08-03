@@ -10,8 +10,10 @@ complete<- function(directory, id=1:332){
     fulldata<-rbind(fulldata,singleAv) #it attaches the results of more monitors
       }
   names(fulldata)<-(c("id","nobs")) #it gives proper names to the dataframe
-  fulldata #shows the results
-}
+ fulldata
+  }
 
-complete("specdata",c(2, 4, 8, 10, 12)) #to check if it works
-complete("specdata")
+comp<-complete("specdata",c(2, 4, 8, 10, 12)) #to check if it works
+comp
+
+comp<-complete("specdata")
